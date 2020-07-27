@@ -1,0 +1,28 @@
+//Select the index of minimum value and copy it to the first position
+
+class Solution {
+    public int[] sortArray(int[] nums) {
+        
+        if(nums.length <=1 || nums == null)
+            return nums;
+        
+        for(int i=0;i<nums.length-1;i++)
+        {
+            int min = i;
+            for(int j=i+1;j<nums.length;j++)
+            {
+                if(nums[min]>nums[j])
+                    min=j;
+            }
+            
+            int t = nums[i];
+            nums[i] = nums[min];
+            nums[min] =t;
+            
+        }
+        
+        
+        return nums;
+        
+    }
+}
